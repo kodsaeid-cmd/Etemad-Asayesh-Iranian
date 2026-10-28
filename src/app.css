@@ -567,3 +567,7 @@ main { min-height:68vh; }
   .contact-detail a,.contact-detail strong { font-size:14px; }
 }
 @media(prefers-reduced-motion:reduce) { .hero-footage video { display:none!important; } }
+
+/* Keep cooperation accessible in the responsive menu when the desktop CTA is hidden. */
+.links a.cooperation-mobile { display:none; }
+@media(max-width:950px) { .links a.cooperation-mobile { display:block; color:#7ee8ec; } }

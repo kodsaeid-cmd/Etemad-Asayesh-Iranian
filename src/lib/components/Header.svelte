@@ -9,7 +9,8 @@
     { href: '/about', label: 'درباره گروه' },
     { href: '/activities', label: 'حوزه‌های فعالیت' },
     { href: '/magazine', label: 'مجله' },
-    { href: '/contact', label: 'ارتباط با ما' }
+    { href: '/contact', label: 'ارتباط با ما' },
+    { href: '/cooperation', label: 'همکاری با گروه' }
   ];
   const isActive = (href: string) => href === '/' ? page.url.pathname === '/' : page.url.pathname === href || page.url.pathname.startsWith(href + '/');
   onMount(() => {
@@ -27,7 +28,7 @@
     </a>
     <nav id="links" class:open={menuOpen} class="links" aria-label="ناوبری اصلی">
       {#each links as item}
-        <a class:active={isActive(item.href)} aria-current={isActive(item.href) ? 'page' : undefined} href={item.href} onclick={() => menuOpen = false}>{item.label}</a>
+        <a class:active={isActive(item.href)} class:cooperation-mobile={item.href === '/cooperation'} aria-current={isActive(item.href) ? 'page' : undefined} href={item.href} onclick={() => menuOpen = false}>{item.label}</a>
       {/each}
     </nav>
     <div class="navact">
