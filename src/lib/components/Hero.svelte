@@ -23,24 +23,20 @@
   <div class="wrap hero-layout">
     <div class="hero-text">
       <span class="eyebrow">ETEMAD &amp; ASAYESH IRANIAN</span>
-      <h1 id="hero-heading">یک گروه،<br /><em>پنج مجموعه تخصصی،</em><br />برای مراقبت بهتر.</h1>
-      <p class="hero-description">اعتماد و آسایش ایرانیان، راهبر گروهی از مراکز خدمات مراقبتی، یک سامانه دیجیتال خدمات خانواده و یک مجموعه آموزش مهارت است؛ مجموعه‌هایی با هویت مستقل و هدف مشترکِ ارتقای کیفیت مراقبت و خدمات خانواده.</p>
+      <p class="hero-kicker">اعتماد و آسایش ایرانیان</p>
+      <h1 id="hero-heading">فراتر از <em>امروز.</em></h1>
+      <p class="hero-description">افق‌های تازه، از نگاه‌های متفاوت آغاز می‌شوند.</p>
       <div class="hero-actions">
-        <a class="primary" href="#companies">آشنایی با شرکت‌های گروه</a>
+        <a class="primary" href="#companies">آشنایی با گروه</a>
         <a class="secondary" href="#about">درباره شرکت مادر</a>
       </div>
       <div class="hero-selected" aria-live="polite" aria-atomic="true">
         <div class="hero-selected-identity">
           <img src={'/assets/logo-' + companies[selected].logo + '.png'} alt="" width="58" height="58" />
-          <div><small>برند انتخاب‌شده</small><h2>{companies[selected].name}</h2></div>
+          <div><small>از مجموعه‌های گروه</small><h2>{companies[selected].name}</h2></div>
         </div>
         <p>{companies[selected].description}</p>
         <a href={companies[selected].website} target="_blank" rel="noopener noreferrer">{companies[selected].websiteLabel}</a>
-      </div>
-      <div class="hero-index" aria-label="ساختار گروه">
-        <span><b>۰۱</b> شرکت مادر</span>
-        <span><b>۰۵</b> شرکت زیرمجموعه</span>
-        <span>هویت‌های مستقل، راهبری هماهنگ</span>
       </div>
     </div>
     <div class="hero-network" aria-label="ساختار تعاملی شرکت مادر و پنج برند زیرمجموعه">
@@ -55,7 +51,7 @@
         <span class="hero-core-halo" aria-hidden="true"></span>
         <img src="/assets/logo-holding.png" alt="لوگوی اعتماد و آسایش ایرانیان" width="91" height="91" fetchpriority="high" />
         <strong>اعتماد و آسایش ایرانیان</strong>
-        <small>شرکت مادر و راهبر مجموعه</small>
+        <small>شرکت مادر</small>
       </div>
       {#each companies as company, i (company.logo)}
         <a
@@ -73,7 +69,7 @@
           <span class="hero-node-name">{company.name}</span>
         </a>
       {/each}
-      <span class="hero-diagram-caption">با انتخاب لوگوی هر شرکت، وب‌سایت آن در زبانه‌ای تازه باز می‌شود.</span>
+      <span class="hero-diagram-caption">با انتخاب لوگوی هر شرکت، وارد وب‌سایت آن شوید.</span>
     </div>
   </div>
 </section>

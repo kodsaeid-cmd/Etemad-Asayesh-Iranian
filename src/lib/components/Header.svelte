@@ -17,8 +17,8 @@
     </a>
     <nav id="links" class:open={menuOpen} class="links" aria-label="ناوبری اصلی">
       <a class="active" href="#home" onclick={() => menuOpen = false}>صفحه اصلی</a>
-      <a href="#about" onclick={() => menuOpen = false}>درباره گروه</a>
       <a href="#companies" onclick={() => menuOpen = false}>شرکت‌های گروه</a>
+      <a href="#about" onclick={() => menuOpen = false}>درباره گروه</a>
       <a href="#scope" onclick={() => menuOpen = false}>حوزه‌های فعالیت</a>
       <a href="#magazine" onclick={() => menuOpen = false}>مجله</a>
       <a href="#contact" onclick={() => menuOpen = false}>ارتباط با ما</a>
