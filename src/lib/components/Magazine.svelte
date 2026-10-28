@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { fallbackImage } from '$lib/utils/media';
   import { media } from '$lib/data/media';
   const articles = [
     {
@@ -49,7 +48,7 @@
     <div class="maggrid">
       {#each articles as article, i}
         <article class="article">
-          <div class="article-media"><img src={article.image} onerror={(event) => fallbackImage(event, '/assets/photo-care-conversation.webp')} alt={article.alt} width="625" height="625" loading="lazy" decoding="async" /><small>{article.category}</small></div>
+          <div class="article-media"><img src={article.image} alt={article.alt} width="625" height="625" loading="lazy" decoding="async" /><small>{article.category}</small></div>
           <div class="articlebody">
             <span class="article-number">0{i + 1} / EDITORIAL</span>
             <h4>{article.title}</h4>
