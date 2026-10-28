@@ -1,22 +1,24 @@
 <script lang="ts">
+  import { fallbackImage } from '$lib/utils/media';
+  import { media } from '$lib/data/media';
   const articles = [
     {
       category: 'مراقبت و سالمندی',
-      image: '/assets/photo-care-conversation.webp',
+      image: media.medication,
       alt: 'مراقب و بانوی سالمند در گفت‌وگوی صمیمانه',
       title: 'مراقبت سالمند در خانه؛ از شناخت نیازها تا انتخاب مراقب',
       description: 'مراقبت مناسب از سالمند با شناخت شرایط جسمی، روحی و سبک زندگی او آغاز می‌شود. این مقاله به موضوعاتی مانند تشخیص سطح نیاز مراقبتی، حفظ استقلال فرد و نکات مهم انتخاب نیروی مراقب می‌پردازد.'
     },
     {
       category: 'خانواده و مراقبت',
-      image: '/assets/photo-calm-home.webp',
+      image: media.home,
       alt: 'فضای آرام خانه با نور طبیعی',
       title: 'چطور برای مراقبت از یکی از اعضای خانواده برنامه‌ریزی کنیم؟',
       description: 'هنگامی که یکی از اعضای خانواده به مراقبت نیاز پیدا می‌کند، تصمیم‌گیری درباره وظایف، زمان‌بندی، انتخاب کمک حرفه‌ای و هماهنگی میان اعضای خانواده اهمیت بیشتری پیدا می‌کند. این مطلب، چارچوبی برای بررسی این تصمیم‌ها ارائه می‌دهد.'
     },
     {
       category: 'فناوری و آینده خدمات',
-      image: '/assets/photo-digital-care.webp',
+      image: media.medical,
       alt: 'نمای مفهومی خدمات دیجیتال بر صفحه تلفن همراه',
       title: 'فناوری چه تغییری در آینده خدمات خانواده ایجاد می‌کند؟',
       description: 'از یافتن ارائه‌دهنده مناسب تا پیگیری درخواست‌ها و مدیریت تجربه دریافت خدمات، ابزارهای دیجیتال فرصت‌هایی برای ساده‌تر شدن فرایندها ایجاد کرده‌اند. این مقاله به ظرفیت‌ها و محدودیت‌های این تحول می‌پردازد.'
@@ -47,16 +49,16 @@
     <div class="maggrid">
       {#each articles as article, i}
         <article class="article">
-          <div class="article-media"><img src={article.image} alt={article.alt} width="625" height="625" loading="lazy" decoding="async" /><small>{article.category}</small></div>
+          <div class="article-media"><img src={article.image} onerror={(event) => fallbackImage(event, '/assets/photo-care-conversation.webp')} alt={article.alt} width="625" height="625" loading="lazy" decoding="async" /><small>{article.category}</small></div>
           <div class="articlebody">
             <span class="article-number">0{i + 1} / EDITORIAL</span>
             <h4>{article.title}</h4>
             <p>{article.description}</p>
-            <span class="article-status">عنوان پیشنهادی · مقاله پس از انتشار قابل مطالعه خواهد بود</span>
+            <span class="article-status">از موضوعات مجله</span>
           </div>
         </article>
       {/each}
     </div>
-    <p class="editorial-note">این کارت‌ها معرفی موضوعات پیشنهادی‌اند و هنوز مقاله منتشرشده نیستند. آرشیو محتوای موجود با حفظ نشانی‌های معتبر در مرحله انتقال به مجله متصل خواهد شد.</p>
+
   </div>
 </section>

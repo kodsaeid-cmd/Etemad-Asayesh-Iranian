@@ -1,12 +1,15 @@
 <script lang="ts">
   import { companies } from '$lib/data/companies';
   import { onMount } from 'svelte';
+  import { media } from '$lib/data/media';
   let allowVideo = $state(false);
+  let videoSrc = $state<string>(media.videoStandard);
   onMount(() => {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const small = window.matchMedia('(max-width: 760px)').matches;
     const saveData = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData;
     allowVideo = !reduced && !small && !saveData;
+    videoSrc = window.matchMedia('(min-width: 1200px)').matches ? media.videoHd : media.videoStandard;
   });
 
   let selected = $state(0);
@@ -30,8 +33,8 @@
   <div class="hero-aurora" aria-hidden="true"></div>
   <div class="hero-footage" aria-hidden="true">
     {#if allowVideo}
-      <video autoplay muted loop playsinline preload="none" poster="/assets/photo-care-conversation.webp" aria-hidden="true">
-        <source src="https://videos.pexels.com/video-files/7517384/7517384-hd_1280_720_25fps.mp4" type="video/mp4" />
+      <video autoplay muted loop playsinline preload="none" poster={media.heroPoster} aria-hidden="true">
+        <source src={videoSrc} type="video/mp4" />
       </video>
     {/if}
   </div>
@@ -84,7 +87,7 @@
           <span class="hero-node-name">{company.name}</span>
         </a>
       {/each}
-      <span class="hero-diagram-caption">با انتخاب لوگوی هر شرکت، وارد وب‌سایت آن شوید.</span>
+      <span class="hero-diagram-caption" aria-hidden="true">پنج هویت · یک افق</span>
     </div>
   </div>
 </section>
