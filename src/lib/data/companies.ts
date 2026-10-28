@@ -5,6 +5,7 @@ export type Company = {
   tagline: string;
   description: string;
   paragraphs: string[];
+  slug: string;
   website: string;
   websiteLabel: string;
 };
@@ -12,7 +13,7 @@ export type Company = {
 // Official destinations stay centralized. The MYCA app's availability should be verified from Iran.
 export const companies: Company[] = [
   {
-    name: 'سلامت اول', logo: 'salamat',
+    name: 'سلامت اول', logo: 'salamat', slug: 'salamat-aval',
     subtitle: 'خدمات پرستاری و مراقبت بالینی در منزل',
     tagline: 'مراقبت تخصصی، در نزدیک‌ترین فاصله به زندگی',
     description: 'سلامت اول در حوزه خدمات پرستاری، مراقبتی و برخی خدمات بالینی و پزشکی در منزل فعالیت می‌کند؛ از مراقبت از سالمندان و کودکان تا همراهی بیماران.',
@@ -24,7 +25,7 @@ export const companies: Company[] = [
     website: 'https://salamateaval.com/', websiteLabel: 'ورود به وب‌سایت سلامت اول'
   },
   {
-    name: 'زندگی برتر', logo: 'zendegi',
+    name: 'زندگی برتر', logo: 'zendegi', slug: 'zendegi-bartar',
     subtitle: 'مراقبت سالمند، کودک و بیمار در منزل',
     tagline: 'همراه زندگی، در لحظاتی که مراقبت اهمیت بیشتری دارد',
     description: 'زندگی برتر اکسین در زمینه خدمات مراقبت و پرستاری در منزل فعالیت دارد؛ با تمرکز بر نیازهای متفاوت خانواده‌ها و تأمین نیروی مراقبتی متناسب با شرایط خدمت.',
@@ -37,7 +38,7 @@ export const companies: Company[] = [
     website: 'https://zendegiebartar.com/', websiteLabel: 'ورود به وب‌سایت زندگی برتر'
   },
   {
-    name: 'سفیر آرامش', logo: 'safir',
+    name: 'سفیر آرامش', logo: 'safir', slug: 'safir-aramesh',
     subtitle: 'خدمات مراقبت و پرستاری در منزل',
     tagline: 'مراقبت، با درک ارزش حضور انسان',
     description: 'سفیر آرامش خدمات مراقبت و پرستاری در منزل را برای سالمندان، کودکان، نوزادان و بیماران ارائه می‌کند و بر کیفیت ارتباط انسانی در تجربه مراقبت تأکید دارد.',
@@ -50,7 +51,7 @@ export const companies: Company[] = [
     website: 'https://safirearamesh.com/', websiteLabel: 'ورود به وب‌سایت سفیر آرامش'
   },
   {
-    name: 'مایکا | MYCA', logo: 'myca',
+    name: 'مایکا | MYCA', logo: 'myca', slug: 'myca',
     subtitle: 'پلتفرم دیجیتال خدمات خانواده',
     tagline: 'تجربه‌ای تازه از ارتباط، انتخاب و دریافت خدمات',
     description: 'مایکا پلتفرم دیجیتال خدمات خانواده است؛ با هدف ساده‌تر کردن مسیر دسترسی به خدمات و ارتباط میان خانواده‌ها و ارائه‌دهندگان خدمت.',
@@ -64,7 +65,7 @@ export const companies: Company[] = [
     website: 'https://mobile.mycacare.com/', websiteLabel: 'ورود به سامانه مایکا'
   },
   {
-    name: 'آکادمی سلامت', logo: 'academy',
+    name: 'آکادمی سلامت', logo: 'academy', slug: 'salamat-academy',
     subtitle: 'آموزش مهارت‌های حرفه‌ای و کاربردی',
     tagline: 'دانش، آغاز توانمندی است',
     description: 'آکادمی سلامت در زمینه توسعه مهارت‌های حرفه‌ای و برگزاری دوره‌های حضوری و آنلاین فعالیت می‌کند؛ از آموزش‌های مرتبط با مراقبت تا مهارت‌های فنی‌وحرفه‌ای.',
