@@ -23,8 +23,8 @@
   <div class="wrap hero-layout">
     <div class="hero-text">
       <span class="eyebrow">ETEMAD &amp; ASAYESH IRANIAN</span>
-      <h1 id="hero-heading">یک گروه،<br /><em>پنج هویت مستقل</em><br />در یک مسیر مشترک.</h1>
-      <p class="hero-description">اعتماد و آسایش ایرانیان، شرکت مادر و راهبر مجموعه‌ای از برندهای تخصصی در حوزه‌های سلامت، مراقبت، رفاه، فناوری و آموزش است.</p>
+      <h1 id="hero-heading">یک گروه،<br /><em>پنج مجموعه تخصصی،</em><br />برای مراقبت بهتر.</h1>
+      <p class="hero-description">اعتماد و آسایش ایرانیان، راهبر گروهی از مراکز خدمات مراقبتی، یک سامانه دیجیتال خدمات خانواده و یک مجموعه آموزش مهارت است؛ مجموعه‌هایی با هویت مستقل و هدف مشترکِ ارتقای کیفیت مراقبت و خدمات خانواده.</p>
       <div class="hero-actions">
         <a class="primary" href="#companies">آشنایی با شرکت‌های گروه</a>
         <a class="secondary" href="#about">درباره شرکت مادر</a>
@@ -35,7 +35,7 @@
           <div><small>برند انتخاب‌شده</small><h2>{companies[selected].name}</h2></div>
         </div>
         <p>{companies[selected].description}</p>
-        <a href={'#brand-' + companies[selected].logo}>مشاهده معرفی برند</a>
+        <a href={companies[selected].website} target="_blank" rel="noopener noreferrer">{companies[selected].websiteLabel}</a>
       </div>
       <div class="hero-index" aria-label="ساختار گروه">
         <span><b>۰۱</b> شرکت مادر</span>
@@ -55,25 +55,25 @@
         <span class="hero-core-halo" aria-hidden="true"></span>
         <img src="/assets/logo-holding.png" alt="لوگوی اعتماد و آسایش ایرانیان" width="91" height="91" fetchpriority="high" />
         <strong>اعتماد و آسایش ایرانیان</strong>
-        <small>شرکت مادر و راهبر گروه</small>
+        <small>شرکت مادر و راهبر مجموعه</small>
       </div>
       {#each companies as company, i (company.logo)}
-        <button
-          type="button"
+        <a
+          href={company.website}
+          target="_blank"
+          rel="noopener noreferrer"
           class="hero-node"
           class:chosen={selected === i}
           style={'--node-x:' + points[i].x + '%;--node-y:' + points[i].y + '%;--node-accent:' + points[i].color}
-          aria-pressed={selected === i}
-          aria-label={'انتخاب ' + company.name}
-          onclick={() => selected = i}
+          aria-label={company.websiteLabel + ' در زبانه جدید'}
           onmouseenter={() => selected = i}
           onfocus={() => selected = i}
         >
           <span class="hero-node-logo"><img src={'/assets/logo-' + company.logo + '.png'} alt="" width="76" height="66" /></span>
           <span class="hero-node-name">{company.name}</span>
-        </button>
+        </a>
       {/each}
-      <span class="hero-diagram-caption">برای معرفی هر برند، لوگوی آن را انتخاب کنید.</span>
+      <span class="hero-diagram-caption">با انتخاب لوگوی هر شرکت، وب‌سایت آن در زبانه‌ای تازه باز می‌شود.</span>
     </div>
   </div>
 </section>

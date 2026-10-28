@@ -213,3 +213,8 @@ a:focus-visible,button:focus-visible { outline:3px solid var(--teal); outline-of
   .primary,.secondary { font-size:11px; padding:9px 16px; }.hero-index>span:last-child { width:100%; }.foot { justify-content:center; text-align:center; }
 }
 @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; animation:none!important; transition:none!important; } }
+
+/* Brand links: keep the interactive motion, but make every node and company card a semantic external anchor. */
+.hero-node, .brandcard { text-decoration:none; cursor:pointer; }
+.hero-node:focus-visible, .brandcard:focus-visible, .hero-selected a:focus-visible, .detail-link:focus-visible { outline:3px solid #78ebf5; outline-offset:4px; }
+.brandcard { display:block; }

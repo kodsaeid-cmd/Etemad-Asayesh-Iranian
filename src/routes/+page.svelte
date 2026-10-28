@@ -11,7 +11,7 @@
 
 <svelte:head>
   <title>اعتماد و آسایش ایرانیان | گروه شرکت‌ها</title>
-  <meta name="description" content="پیش‌نمایش رسمی هویت وب‌سایت اعتماد و آسایش ایرانیان؛ شرکت مادر و راهبر پنج برند تخصصی." />
+  <meta name="description" content="اعتماد و آسایش ایرانیان؛ گروه شرکت‌های فعال در خدمات مراقبت و پرستاری در منزل، آموزش مهارت‌های حرفه‌ای و سامانه دیجیتال خدمات خانواده مایکا." />
   <meta name="robots" content="noindex,nofollow,noarchive" />
 </svelte:head>
 
