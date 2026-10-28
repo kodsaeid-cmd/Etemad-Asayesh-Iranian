@@ -3,7 +3,7 @@
   import { onMount } from 'svelte';
   import { media } from '$lib/data/media';
   let allowVideo = $state(false);
-  let videoSrc = $state(media.videoStandard);
+  let videoSrc = $state<string>(media.videoStandard);
   onMount(() => {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const small = window.matchMedia('(max-width: 760px)').matches;
