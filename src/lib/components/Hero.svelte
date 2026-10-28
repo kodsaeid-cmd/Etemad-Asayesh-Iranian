@@ -1,5 +1,13 @@
 <script lang="ts">
   import { companies } from '$lib/data/companies';
+  import { onMount } from 'svelte';
+  let allowVideo = $state(false);
+  onMount(() => {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const small = window.matchMedia('(max-width: 760px)').matches;
+    const saveData = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData;
+    allowVideo = !reduced && !small && !saveData;
+  });
 
   let selected = $state(0);
   const points = [
@@ -20,6 +28,13 @@
 
 <section class="hero" id="home" aria-labelledby="hero-heading">
   <div class="hero-aurora" aria-hidden="true"></div>
+  <div class="hero-footage" aria-hidden="true">
+    {#if allowVideo}
+      <video autoplay muted loop playsinline preload="none" poster="/assets/photo-care-conversation.webp" aria-hidden="true">
+        <source src="https://videos.pexels.com/video-files/7517384/7517384-hd_1280_720_25fps.mp4" type="video/mp4" />
+      </video>
+    {/if}
+  </div>
   <div class="wrap hero-layout">
     <div class="hero-text">
       <span class="eyebrow">ETEMAD &amp; ASAYESH IRANIAN</span>
@@ -27,8 +42,8 @@
       <h1 id="hero-heading">فراتر از <em>امروز.</em></h1>
       <p class="hero-description">افق‌های تازه، از نگاه‌های متفاوت آغاز می‌شوند.</p>
       <div class="hero-actions">
-        <a class="primary" href="#companies">آشنایی با گروه</a>
-        <a class="secondary" href="#about">درباره شرکت مادر</a>
+        <a class="primary" href="/companies">آشنایی با گروه</a>
+        <a class="secondary" href="/about">درباره شرکت مادر</a>
       </div>
       <div class="hero-selected" aria-live="polite" aria-atomic="true">
         <div class="hero-selected-identity">
