@@ -13,7 +13,6 @@
   <title>اعتماد و آسایش ایرانیان | گروه شرکت‌ها</title>
   <meta name="description" content="پیش‌نمایش رسمی هویت وب‌سایت اعتماد و آسایش ایرانیان؛ شرکت مادر و راهبر پنج برند تخصصی." />
   <meta name="robots" content="noindex,nofollow,noarchive" />
-  <link rel="preload" as="image" href="/assets/hero-1024.webp" imagesrcset="/assets/hero-640.webp 640w, /assets/hero-1024.webp 1024w, /assets/hero-1920.webp 1920w" imagesizes="100vw" />
 </svelte:head>
 
 <a class="skip" href="#main">رفتن به محتوای اصلی</a>

@@ -24,7 +24,7 @@
       <a href="#contact" onclick={() => menuOpen = false}>ارتباط با ما</a>
     </nav>
     <div class="navact">
-      <a class="outline" href="#contact">همکاری با گروه ←</a>
+      <a class="outline" href="#contact">همکاری با گروه</a>
       <button type="button" aria-controls="links" aria-expanded={menuOpen} aria-label={menuOpen ? 'بستن منو' : 'باز کردن منو'} class="navmenu" onclick={() => menuOpen = !menuOpen}>☰</button>
     </div>
   </div>
