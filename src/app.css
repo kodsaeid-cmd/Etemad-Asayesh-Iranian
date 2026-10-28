@@ -631,3 +631,181 @@ main { min-height:68vh; }
   .contact-map-section {padding:12px;border-radius:21px;}
   .inner-hero::before, .brand-page-head::before { opacity:.12; }
 }
+
+
+/* V13 — Responsive-first correction.
+   The V9 desktop .hero-layout override appeared after the original mobile breakpoint,
+   forcing the 390px hero into 134px + 197px columns. These final cascade overrides
+   deliberately follow all legacy sections to restore actual mobile layouts. */
+@media (max-width: 1100px) {
+  .hero-layout {
+    grid-template-columns: minmax(0,1fr);
+    gap: 25px;
+    padding-top: 130px;
+    padding-bottom: 52px;
+  }
+  .hero-text { width: min(100%, 700px); margin-inline: auto; text-align: center; }
+  .hero-description { margin-inline: auto; }
+  .hero-actions, .hero-index { justify-content: center; }
+  .hero-selected { margin-inline: auto; text-align: right; }
+  .hero-network { width: min(100%, 630px); margin-inline: auto; }
+  .home-activity-grid, .home-editorial-grid, .maggrid, .scope {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+  .home-activity, .home-editorial, .article, .scopearticle { min-width: 0; }
+}
+@media (max-width: 950px) {
+  .navin { gap: 14px; justify-content: space-between; }
+  .navact { margin-right: auto; flex: none; }
+  .navmenu {
+    display: inline-grid; place-items: center;
+    min-width: 44px; min-height: 44px; padding: 8px;
+    font-size: 22px; line-height: 1;
+  }
+  .links {
+    max-height: calc(100dvh - 90px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .links a { min-height: 45px; display: flex; align-items: center; font-size: 14px; }
+  .home-section-heading { display: block; }
+  .home-section-heading>p { max-width: 680px; margin-top: 12px; }
+  .company-directory { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .collaboration-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .home-contact-band>.wrap { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 760px) {
+  .wrap { width: calc(100% - 36px); max-width: 100%; }
+  .navin { min-height: 70px; }
+  .identity { min-width: 0; max-width: calc(100% - 64px); gap: 9px; }
+  .identity img { width: 42px; height: 42px; flex: none; }
+  .identity span { min-width: 0; }
+  .identity strong { font-size: clamp(10px,2.9vw,13px); overflow-wrap: anywhere; }
+  .identity small { font-size: 9px; }
+  .links { top: 69px; right: 18px; left: 18px; }
+  .hero { min-height: 0; }
+  .hero-layout { padding-top: 114px; padding-bottom: 55px; gap: 26px; }
+  .hero-text { width: 100%; }
+  .hero h1 { font-size: clamp(37px,9vw,58px); line-height: 1.32; letter-spacing: -1px; }
+  .hero-description { font-size: clamp(13px,3.6vw,16px); line-height: 2; }
+  .hero-actions { justify-content: center; gap: 10px; }
+  .hero-actions a { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+  .hero-selected { width: 100%; padding: 18px; margin-top: 25px; }
+  .hero-selected p { font-size: 12px; line-height: 2.1; }
+  .hero-network { width: min(100%, 580px); }
+  .hero-footage video { display: none; }
+  .home-section, .inner-content { padding: 62px 0 76px; }
+  .home-section-heading { margin-bottom: 25px; }
+  .home-section-heading h2 { font-size: clamp(28px,7vw,40px); }
+  .home-story, .brand-page-layout, .brand-reading-layout,
+  .group-introduction, .about-editorial, .scope-introduction, .magazine-introduction {
+    grid-template-columns: minmax(0,1fr);
+  }
+  .home-story-visual { order: 2; min-height: 230px; }
+  .home-story-copy { order: 1; }
+  .home-activity-grid, .home-editorial-grid, .maggrid, .scope,
+  .collaboration-grid { grid-template-columns: minmax(0,1fr); }
+  .home-activity { height: clamp(235px,65vw,330px); }
+  .home-editorial>img, .article-media img { height: clamp(190px,52vw,270px); }
+  .home-editorial p, .articlebody p, .articlebody h3 { min-height: 0; }
+  .home-contact-band { padding: 55px 0; }
+  .home-contact-actions { width: 100%; }
+  .inner-hero { padding-top: 122px; padding-bottom: 58px; min-height: 0; }
+  .inner-hero h1 { font-size: clamp(29px,7vw,46px); line-height: 1.5; }
+  .inner-hero p { font-size: 13px; }
+  .company-profile, .company-profile:nth-child(even) { grid-template-columns: minmax(0,1fr); }
+  .company-directory-card, .company-profile { min-width: 0; }
+  .brand-page-head { padding-top: 122px; padding-bottom: 62px; }
+  .brand-page-copy h1 { font-size: clamp(35px,9vw,52px); }
+  .brand-page-mark { width: min(185px,75%); }
+  .brand-reading-side { position: static; }
+  .contact-layout { grid-template-columns: minmax(0,1fr); }
+  .contact-map-heading { flex-direction: column; align-items: flex-start; }
+  .contact-map-route { min-height: 44px; }
+  .contact-map-wrap, .contact-map-wrap iframe { min-height: 310px; height: 310px; }
+  .contact-map-caption { max-width: calc(100% - 18px); right: 9px; left: 9px; bottom: 9px; }
+  .contact-card-main,.corporate-id { min-width: 0; padding: 23px; }
+  .footer-main { display: block; }
+  .footer-navigation { margin-top: 25px; gap: 10px 20px; }
+  .footer-bottom { display: block; text-align: center; }
+}
+@media (max-width: 600px) {
+  .hero-layout { gap: 12px; }
+  /* Mobile interaction is a real 2-column touch grid, not a scaled desktop orbit. */
+  .hero-network {
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 11px;
+    width: 100%;
+    min-height: 0;
+    aspect-ratio: auto;
+    padding: 137px 0 6px;
+    filter: none;
+    align-items: stretch;
+  }
+  .hero-orbit, .hero-connections { display: none; }
+  .hero-core {
+    top: 2px; left: 50%;
+    transform: translateX(-50%);
+    width: 122px; height: 122px;
+    border-width: 4px;
+  }
+  .hero-core img { width: 66px; height: 56px; }
+  .hero-core strong { font-size: 9px; }
+  .hero-core small { font-size: 8px; }
+  .hero-core-halo { inset: -12px; }
+  .hero-node {
+    position: static; top: auto; left: auto;
+    transform: none;
+    width: 100%; min-width: 0; min-height: 122px;
+    border-radius: 18px;
+    padding: 12px 7px; gap: 7px;
+    box-shadow: 0 8px 22px #0005;
+  }
+  .hero-node:hover,.hero-node.chosen,.hero-node:focus-visible {
+    transform: translateY(-2px);
+    border-color: var(--node-accent);
+    box-shadow: 0 0 0 2px #39d6ee16,0 10px 23px #0007;
+  }
+  .hero-node-logo { width: 75px; height: 65px; padding: 8px; }
+  .hero-node-name {
+    font-size: 11px; line-height: 1.5;
+    text-align: center; overflow-wrap: anywhere;
+  }
+  .hero-node:last-of-type {
+    grid-column: 1/-1; width: min(180px,100%); justify-self: center;
+  }
+  .hero-diagram-caption {
+    position: static; grid-column: 1/-1; font-size: 11px;
+    padding-top: 5px; line-height: 1.8;
+  }
+  .company-directory { grid-template-columns: minmax(0,1fr); gap: 13px; }
+  .company-directory-card { padding: 18px; }
+  .directory-logo { width: 115px; height: 105px; margin: 7px auto 12px; }
+  .company-directory-card p { font-size: 12px; min-height: 0; }
+  .company-directory-card h3 { font-size: 18px; }
+  .directory-actions a { font-size: 12px; padding: 7px 0; }
+  .profile-identity { gap: 12px; }
+  .profile-category { max-width: 100%; }
+  .profile-content { padding: 24px 21px 30px; }
+  .profile-content h4 { font-size: clamp(25px,7vw,35px); }
+  .about-principles { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .about-principle { min-width: 0; }
+  .contact-map-section { padding: 10px; border-radius: 18px; }
+  .contact-map-caption small { font-size: 10px; overflow-wrap: anywhere; }
+  .contact-quick-actions { align-items: stretch; }
+  .contact-quick-actions a { min-height: 44px; }
+  .home-contact-actions a { min-height: 44px; }
+}
+@media (max-width: 360px) {
+  .wrap { width: calc(100% - 28px); }
+  .identity strong { font-size: 10px; }
+  .hero-network { gap: 8px; }
+  .hero-node { min-height: 112px; padding: 9px 5px; }
+  .hero-node-logo { width: 61px; height: 56px; }
+  .hero-selected { padding: 13px; }
+  .hero-actions { gap: 8px; }
+  .hero-actions a { font-size: 11px; padding-inline: 12px; }
+  .about-principles { grid-template-columns: minmax(0,1fr); }
+  .contact-map-wrap,.contact-map-wrap iframe { height: 290px; min-height: 290px; }
+}
